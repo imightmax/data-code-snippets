@@ -1,0 +1,42 @@
+<!-- gebruik deze functies om de tijd tussen bijvoorbeeld pagelow (var tijd) en trigger te maken (myFunction) -->
+
+<script>
+function myFunction() {
+    var tijdFinish = (Date.now()/ 1000);
+    var beginTijd = (sessionStorage.getItem("stepTimer") / 1000);
+    var tijdsResultaat = (tijdFinish - beginTijd) 
+    console.log(tijdsResultaat)
+    document.getElementById("eindtijd").innerHTML = tijdsResultaat;
+  }
+</script>
+   
+
+      
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NS8SRJD"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+<div id="result"></div>
+
+<button onclick="myFunction()">Bereken de eindtijd!</button>
+
+<div id="eindtijd"></div>
+
+<script>
+
+var tijd = Date.now();
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+  // Store
+  sessionStorage.setItem("stepTimer", tijd);
+  // Retrieve
+  document.getElementById("result").innerHTML = sessionStorage.getItem("stepTimer");
+} else {
+  document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+</script>
+
+</body>
+</html>
