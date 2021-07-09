@@ -1,0 +1,43 @@
+<!-- De functie voor Matomo
+function () {
+    if (TagManager.dataLayer.get('mtm.clickElement')) {
+        return TagManager.dataLayer.get('mtm.clickElement').getAttribute('data-animal-type');
+    } else { 
+        return 'false';
+    }
+  }
+
+  OF
+
+  function () {
+    if (MatomoTagManager.dataLayer.get('mtm.clickElement')) {
+        return MatomoTagManager.dataLayer.get('mtm.clickElement').getAttribute('data-animal-type');
+    } else { 
+        return 'false';
+    }
+  }
+-->
+
+<script>
+    function myFunction(beestje) {
+        var eventNaam = beestje.getAttribute("data-event-category");
+        console.log(eventNaam)
+    }
+</script>
+
+
+<body>
+    h1>Species</h1>
+<p>Click on a species to see what type it is:</p>
+
+<ul>
+  <li onclick="myFunction(this)" id="owl" data-event-category="Animal" data-event-action="Animal Clicked" data-event-name="Bird">Owl</li>
+  <li  id="salmon" data-event-category="Animal" data-event-action="Animal Clicked" data-event-name="Fish">Salmon</li>  
+  <li  id="tarantula" data-event-category="Animal" data-event-action="Animal Clicked" data-event-name="Spider">Tarantula</li>  
+</ul>
+
+</body>
+
+
+
+
